@@ -1,0 +1,53 @@
+/* @extend 继承，会提取出公用的样式 */
+
+$width: 50%;
+
+// 继承
+.fl{
+  float: left;
+}
+
+.box{
+  width: $width;
+  @extend .fl; // 调用继承
+}
+
+.list{
+  $width: 100%;
+  width: $width;
+  @extend .fl;
+}
+
+// 占位选择器，在用到的时候才会被编译出来
+.clearfix{
+  *zoom: 1;
+
+  &:after{
+    content: '';
+    display: block;
+    clear:both;
+  }
+}
+
+// % 在用到的时候，才会编译出来，展位的东西不会显示在页面里面
+%clearfix{
+  *zoom: 1;
+  &:after, &:before{
+    content: '';
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+%center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .item 占位选择器 清除浮动 item的 after，不是 clearfix的 after */
+.item{
+  @extend %clearfix;
+  @extend %center;
+}

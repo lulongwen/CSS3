@@ -1,0 +1,171 @@
+CSS背景适应视网膜屏幕
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+	 /* 当设备像素比不小于2的时候... */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+    /* 当设备像素比不小于1.5的时候... */
+}
+
+	
+
+@media only screen and(-webkit-min-device-pixel-ratio:1.5),
+only screen and(-o-min-device-pixel-raito:3/2),
+only screen and (-moz-min-device-pixel-ratio:1.5),
+only screen and(min-device-pixel-ratio:1.5),
+only screen and(min-resolution:1.5dppx){
+	selector {
+		background: url(*.png) 0 0 no-repeat;
+		-webkit-background-size: 100%;
+		background-size: 100%;
+		/* background-size: 30px; */
+	}
+}
+
+使用放大的图片来替代原图，无论是在属性还是在CSS当中，都要在img标签中加上原图的宽和高；
+
+	当2个版本的图片都在使用是，语句用原图，否则就用放大版本的图片。
+
+text(文本) 和SVG 不存在分辨率的兼容性
+
+主要就是png、gif、jpg ：
+	创建一个放大2倍的图片版本
+	如果gif有动画，就把gif转成png
+
+favicon 
+	创建一个有 alpha 透明度并 包含一个 16*16，32*32像素版本的favicon.ico 文件
+
+
+
+-webkit-min-device-pixel-ratio的常见值对照
+
+-webkit-min-device-pixel-ratio为1.0
+所有非Retina的Mac
+所有非Retina的iOS设备
+Acer Iconia A500 
+Samsung Galaxy Tab 10.1
+Samsung Galaxy S 
+ 
+-webkit-min-device-pixel-ratio为1.3
+Google Nexus 7
+ 
+-webkit-min-device-pixel-ratio为1.5
+Google Nexus S 
+Samsung Galaxy S II 
+HTC Desire
+HTC Desire HD
+HTC Incredible S 
+HTC Velocity
+HTC Sensation 
+ 
+-webkit-min-device-pixel-ratio为2.0
+iPhone 4
+iPhone 4S
+iPhone 5
+iPad (3rd generation)
+iPad 4
+所有Retina displays 的MAC
+Google Galaxy Nexus
+Google Nexus 4
+Google Nexus 10
+Samsung Galaxy S III
+Samsung Galaxy Note II
+Sony Xperia S
+HTC One X 
+
+
+
+/* iPhone 4 ———– */
+
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
+/* iPads (portrait) ———– */
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+/* Smartphones (portrait and landscape) ———– */
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+}
+/* Smartphones (landscape) ———– */
+
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+/* Smartphones (portrait) ———– */
+
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+/* iPads (portrait and landscape) ———– */
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* Styles */
+}
+/* iPads (landscape) ———– */
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+/* iPads (portrait) ———– */
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+/* Desktops and laptops ———– */
+
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
+}
+/* Large screens ———– */
+
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
+}
+/* iPhone 4 ———– */
+
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
+
+兼容 moz-min-device-pixel-ratio
+device-pixel-ratio：定义输入设备屏幕的可视宽度与可见高度比率。
+device-width：输入设备屏幕的可视宽度。
+min-device-pixel-ratio
+moz-min-device-pixel-ratio
+-webkit-min-device-pixel-ratio
+
+1 CSS图形生成
+2 自定义图标字体 icon fonts
+3 使用svg
+4 background-size 向下兼容
+少使用图片元素。现在浏览器主流都支持CSS3技术，而CSS3可以帮助你在不使用的图片的情况下，创造出可缩放的、原生高清的视觉效果，这样一来可以完全不用担心Retina优化问题，还能加快载入速度。
+
+
+device-pixel-ratio：定义输入设备屏幕的可视宽度与可见高度比率。
+device-width：输入设备屏幕的可视宽度。
+orientation ：屏幕横竖屏定向。landscape 是横向，portrait 是纵向【ipad 相反】

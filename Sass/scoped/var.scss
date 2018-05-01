@@ -1,0 +1,87 @@
+// 注释不会被编译
+/*! 会被编译，压缩后会保留注释 */
+
+
+/* sass 全局变量，可以存放 css单位， 颜色，字体 */
+$width: 300px;
+
+$bgc: yellowgreen pink orange; // 多值变量
+
+// !default 默认值，没有使用默认值,有就使用重新定义的值
+$color: #f00!default;
+
+$fm: 'PingFangSC-Regular', 'Microsoft Yahei', '思源黑体';
+
+.box{
+  width: $width * 2;
+  height: $width;
+  background-color: $color;
+  font-family: $fm;
+}
+
+.nav{
+  $width: 500px; // 局部变量
+  width: $width;
+
+  // nth(变量名字 , 第几个)
+  background-color: nth($bgc, 2);
+  color: nth($bgc, 3);
+}
+
+
+/* 选择器嵌套 */
+.list{
+  $lh: 30px;
+  li{
+    height: $lh;
+    line-height: $lh;
+    // 复合样式，类似JSON格式，属性嵌套要用 : 来区分 http://www.lulongwen.com/CSS3
+    font:{
+      style: normal;
+      weight: bold;
+      size: 18px; 
+    }
+  }
+  a{
+    float: left;
+    width: 12px;
+    height: $lh / 2;
+    margin-top: ($lh - 10px) /2; // 运算前后必须有空格
+  }
+}
+
+
+/* & | @at-root 跳出父级 */
+.news{
+  $lh: 20px;
+  .news-content{
+    width: $width * 2;
+  }
+
+  @at-root .news-title{ // 没有 .news
+    width: $width;
+  }
+
+  // 多个跳出父级
+  @at-root{
+    .news-list{
+      height: $lh;
+    }
+    .news-footer{
+      height: $lh * 2;
+    }
+  }
+}
+
+
+.item{
+  width: $width;
+  height: $width * 2;
+  &-content{ // 和 .item 平级
+    width: $width * 3;
+    &-list{
+      height: $width / 2;
+      margin: $width / 10;
+    }
+  }
+}

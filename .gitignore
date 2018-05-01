@@ -1,0 +1,21 @@
+# folder
+node_modules
+icon
+subtitles
+
+sass/.sass-cache
+sass/family.scss
+sass/*.pdf
+
+# /file
+.project
+.vscode
+.history
+.DS_Store
+\.settings/
+
+*.mmap
+
+
+# log
+npm-debug.log

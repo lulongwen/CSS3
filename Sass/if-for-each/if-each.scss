@@ -1,0 +1,99 @@
+/* @if @for @each  @while */
+// map函数
+// $map (key1: value1, key2: value2, key3: value3)
+$map: (color:#fff, bgcolor:#90f, font-size: 30px, border: 2px solid #ddd);
+map类型的数据
+    ```
+    $map: (key1: value1, key2: value2, key3: value3)
+
+    $colors: (light: #fff, dark: #333);
+
+    // 长度 2
+    length($colors) 
+
+    // 获取key
+    map-keys($colors) // ("light", "dark")
+
+    // 获取值
+    map-values($colors) // ("#fff", "#333")
+
+    // 获取值
+    map-get($colors,dark)  //#333
+    map-get($colors, light)  //#fff
+
+    // map-has-key 判断是否有key，返回布尔值
+    map-has-key($colors, light) // 是否有 light 这个key值
+
+    // 合并 map-merge
+    map-merge($colors, (gray: #ccc))
+    $colors: map-merge($colors, (gray: #ccc))
+
+    // 删除 map-remove
+    map-remove($colors, light, dark)
+
+
+
+// list 函数
+// list 本身并没有用处
+border: 1px solid #ddd; // border的属性就是一个列表
+padding: 5px 10px, 5px 0 // 也是一个列表
+padding: (5px 10px) (5px 0) // 可以这么写
+
+
+// length() 长度
+length(5px 10px)  // 2
+length(5px 10px 3px 6px)  // 4
+
+
+// nth() 索引，下标，从1开始
+nth(5px 10px, 1)  // 5px
+nth(5px 10px 15px 20px, 2)  // 10px
+
+
+// index() 找下标
+index(1px solid #ddd, solid) // 2
+
+
+// append() 添加，第三个参数是分隔符
+    - space 空格
+    - comma 逗号，项目和项目之间会用逗号分隔开
+    - auto
+append(5px 10px, 5px)  // (5px 10px 5px)
+
+
+// join() 合并
+join(2px 3px, 5px 0)  // (2px 3px 5px 0)
+
+
+/* @for through 【1 到 10】类似于JS中的 for */
+@for $i from 1 through 10{
+  .item-#{$i}{
+    width: 10px * $i;
+  }
+}
+
+
+/* @for to【1 到 9】 类似于JS中的 for */
+@for $i from 1 to 10{
+  .item-#{$i}{
+    width: 10px * $i;
+  }
+}
+
+/* @while */
+$num: 10;
+@while ($num >= 0){
+  .list-#{$num}{
+    width: 12px * $num;
+  }
+  $num: $num - 2; // 重新设置 $num
+}
+
+
+/* @each */
+$icon-name: user, pass, checked, selected, parent son;
+@each $i in $icon-name{
+  .icon-#{$i}{
+    width: 200px;
+  }
+}
