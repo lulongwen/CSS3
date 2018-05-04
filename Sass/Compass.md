@@ -1,6 +1,8 @@
 # Compass
-- Compass 是 Sass的一个库，在 Sass基础上封装了一系列有用的模块和模板，补充 Sass功能
-- Compass 与 Sass的关系类似 jQuery 与JS的关系
+- Compass 是什么？
+    - 是 Sass的一个库，在 Sass基础上封装了一系列有用的模块和模板，补充 Sass功能
+    - Compass 与 Sass的关系类似 jQuery 与JS的关系
+    - 参考资料 http://ju.outofmemory.cn/entry/72864
 - Compass的用途
     - 使用变量
     - 自动转换 rgb 颜色值
