@@ -1,0 +1,163 @@
+/** 参考资料
+  mormalize.css IE10+
+  https://github.com/necolas/normalize.css/
+*/
+
+* {
+  &:before,
+  &:after {
+    box-sizing: border-box;
+    // 去除点击事件灰色背景，如 a标签
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  // 不让iPhone横坚屏切换的时候调节文字
+  -webkit-text-size-adjust: none;
+  
+}
+
+// 清除默认边距
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+ul,
+ol,
+blockquote {
+  margin: 0;
+}
+blockquote, legend, fieldset {
+  padding: 0;
+}
+
+
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+fieldset,
+img {
+  border: none;
+}
+img {
+  max-width: 100%;
+  width: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th, td {
+  padding: 0;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+hr {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+
+
+button {
+  border: none;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  /*渲染成button的风格*/
+  -webkit-appearance: button;
+  text-transform: none;
+  outline: none;
+}
+
+button,
+input[type=button],
+input[type=checkbox],
+input[type=reset],
+input[type=submit],
+label {
+  cursor: pointer;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+  /*输入框提示语的字体样式*/
+}
+
+input::-webkit-inner-spin-button {
+  /*解决input的type="number"在部分手机端会出现一个小按钮*/
+  -webkit-appearance: none;
+  /*去除系统默认appearance的样式,常用于IOS下移除原生样式*/
+}
+
+input::-webkit-outer-spin-button {
+  /*解决input的type="number"在部分手机端会出现一个小按钮*/
+  -webkit-appearance: none;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+}
+
+input.fixAKeyboard:focus,
+textarea.fixAndroidKeyboard:focus {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-modify: read-write-plaintext-only;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+}
+
+textarea {
+  min-height: 50px;
+  height: auto;
+  vertical-align: top;
+}
+
+
+select {
+  margin: 0;
+  outline: 0;
+}

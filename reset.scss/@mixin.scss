@@ -1,0 +1,50 @@
+// 清除浮动
+@mixin clear {
+  &:after,
+  &:before {
+    content: '';
+    display: table;
+    font-size: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.clearfix {
+  @include clear;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+
+// 1 像素边框
+
+
+// 文本超出省略号
+@mixin ellipsis {
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// 水平和垂直都居中
+@mixin alignCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+

@@ -1,5 +1,8 @@
 # Sass 编写高质量 CSS
 - http://www.apebook.org/book/sass
+- family.scss
+    CSS 伪类
+    https://github.com/LukyVj/family.scss
 
 ```
 import & partials
@@ -113,13 +116,26 @@ Boolean
     安装时，注意添加 环境变量 PATH
     安装路径不能有中文，不能有特殊符号 | 空格
 
-    ruby -v 是否安装成功
-    gem update --system
+    验证安装
+        ruby -v
+        gem -v
 
-    gem install compass // 安装 compass
+    gem update --system
+    gem sources -r https://rubygems.org/ 删除原来的资源库位置 
+    gem sources -a https://ruby.taobao.org/ 添加新的资源库位置 
+    gem sources -u 更新资源库
+    
+    安装 Sass不成功的问题
+        1. 目录权限不够 -> 以管理员身份安装
+        2. gem需要更新 -> gem update --system
+
+    安装 sass
+        gem install sass
+        gem install compass // 安装 compass
+
+    验证安装   
+        sass -v
         compass -v
-    gem install sass
-    sass -v
 
     gem source 源地址
     ```

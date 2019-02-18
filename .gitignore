@@ -1,20 +1,28 @@
 # folder
 node_modules
-icon
-subtitles
+IconFont
+css技术点
 
-sass/.sass-cache
+Gradient
+Animation
+@media
+
+sass/*.sass-cache
 sass/family.scss
 sass/*.pdf
+
 
 # /file
 .project
 .vscode
 .history
 .DS_Store
-\.settings/
-
+.settings
 *.mmap
+*.pdf
+
+# compass cache
+*.sass-cache
 
 
 # log
