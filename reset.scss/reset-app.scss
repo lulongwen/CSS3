@@ -7,7 +7,9 @@
 }
 
 html {
-  font-size: 62.5%;
+  height: 100%;
+  overflow-x: hidden; 
+  font-size: 50px;
   line-height: 1.15;
   -webkit-font-smoothing: antialiased;
   // 不让iPhone横坚屏切换的时候调节文字
@@ -16,7 +18,9 @@ html {
 }
 
 body {
+  font-size: .28rem;
   font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+  color: #333;
   -webkit-overflow-scrolling: touch;
 }
 

@@ -17,3 +17,6 @@ rem的相对参照物为根元素(root) html；相对参照固定不变，所以
 
 	font-size:100%
 		1rem = 16px
+
+
+## px

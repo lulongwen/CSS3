@@ -1,6 +1,6 @@
 # folder
 node_modules
-IconFont
+IconFont/material-design-icons
 css技术点
 
 Gradient
@@ -20,6 +20,9 @@ sass/*.pdf
 .settings
 *.mmap
 *.pdf
+*.zip
+*.ai
+*.svg
 
 # compass cache
 *.sass-cache

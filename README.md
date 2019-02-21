@@ -11,6 +11,7 @@
 
   Less
   Sass
+    很多项目和工作中会用到，一定要掌握
 
   Css 规范
     Reset.css 样式重置
@@ -41,6 +42,10 @@
 
   csshack.css
 ```
+
+
+## CSS3 参考资料
+  * [CSS像素、物理像素、逻辑像素、设备像素比、PPI、Viewport](https://github.com/jawil/blog/issues/21)
 
 
 ## CSS3 工具
