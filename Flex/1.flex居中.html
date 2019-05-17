@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css3 实现 三栏均分</title>
+	<style>
+		.flex, .flex2 {
+			display: -webkit-flex;
+			display: flex;
+			width: 50%;
+			height: 300px;
+			margin: 30px auto;
+			border: 1px solid #7f8c8d;
+			text-align: center;
+		}
+		.flex > div, .flex2 > div {
+			flex: 1;
+			line-height: 300px;
+			font-size: 32px;
+			color: #fff;
+		}
+
+		.flex {
+			box-orient: horizontal;
+		}
+		.flex2 {
+			box-orient: vertical;
+		}
+
+		.box1{background:#1abc9c}
+		.box2{background:#3498db}
+		.box3{background:#9b59b6}
+		.box4{background:#f39c12}
+		.box5{background:#27ae60}
+		.box6{background:#c0392b}
+	</style>
+</head>
+<body>
+	<!-- 横向排列 -->
+    <div class="flex">
+      <div class="box1">1</div>
+      <div class="box2">2</div>
+      <div class="box3">3</div>
+    </div>
+
+    <!-- 纵向排列 -->
+    <div class="flex2">
+      <div class="box4">4</div>
+      <div class="box5">5</div>
+      <div class="box6">6</div>
+    </div>
+</body>
+</html>

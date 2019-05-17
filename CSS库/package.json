@@ -1,0 +1,13 @@
+{
+  "name": "pure-css3",
+  "version": "1.0.0",
+  "description": "CSS3效果",
+  "main": "index.js",
+  "repository": "git@github.com:lulongwen/CSS3.git",
+  "author": "longwen <1348551496@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "animate.css": "^3.7.0",
+    "css-ripple-effect": "^1.0.5"
+  }
+}
