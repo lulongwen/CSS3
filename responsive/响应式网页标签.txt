@@ -1,0 +1,47 @@
+﻿用户设备：大于980px    PC界面
+	    620px-979px  Pad界面
+	   小于619px    手机界面
+【1 流式布局】
+	（01）就是把width ，padding，margin属性用百分比的形式规定就是流式布局
+	　　当一个盒子是body标签的子盒子的时候，这时如果用百分比来设置宽度，这个盒子的百分比宽度，就是以浏览器窗口宽度为参考的
+	    盒子的宽度 = 浏览器的宽度 * 60%
+
+	　　width、padding、margin如果用百分数来进行设置，实际上都是以自己的父盒子的宽度为参考的。
+  
+	（02 box-sizing 盒子内减） 
+  
+
+【2 媒体查询】
+	可视窗口宽高比：aspect-ratio:可视窗口宽度/可视窗口高度  @media(aspect-ratio:3/2){样式}
+	设备宽高比： device-aspect-ratio：
+	设备方向： orientation:portrait; 设备方向：垂直（返回true值）
+	orientation:landscape; 设备方向： 水平方向 @media(orientation:landscape){}
+	orientation:portrait; 设备方向：垂直方向
+	height : 可视窗口高度 
+	device-height: 设备高度
+	width:可视窗口宽度
+	divice-width:设备宽度
+	rasolution像素密度（屏幕的密度） @media screen and (max-resolution:150dpi),screen and (-webkit-device-pixel-ratio:1)
+				          (resolution:1dppx),	
+	【操作符】and  与，or 或  ，not 否定  @media not screen and (max-width:979px){样式}
+		only 防止不同的浏览器应用样式
+【3 视口标签】
+ <meta name="viewport" content="width=device-width" />
+
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+		width="device-width", 设置视口的宽度等于设备的宽度
+		initial-scale=1.0,	  设置视口的初始缩放倍数为1.0倍
+		minimum-scale=1.0,	  设置视口的最小缩放倍数为1.0倍	
+		
+		maximum-scale=1.0,	  设置视口的最大的缩放倍数为1.0倍
+		user-scalable=no,	   设置视口不可以被用户缩放
+		
+
+<link href="css/mobile.css" type="text/css" rel="stylesheet" media="(max-width:619px)" />
+
+	box-sizing:border-box; 内减
+	min-width: 980px 大于或等于980px 
+	max-width:980px 小于或等于980px 
+  media="(max-width:981px)and(min-width:620px)"  样式表加载的条件是：浏览器小于等于981px且大于等于620px；
+	
+	media="(max-width:619px)"  小于等于619px的时候，加载这个样式表

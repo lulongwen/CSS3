@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="gb2312">
+        <title>结构性伪类选择器</title>
+        <style type="text/css">
+        /*:root{background:#900;}*/
+		/*#box p{color:#008000;}
+		#box p:not(.abc){color:#900;}
+		#box p:empty{height:30px; line-height:30px; background:#05a;}
+		#box p:first-child{background:#0f0;}
+		#box p:last-child{background:#0ff;}*/
+		/*#box p{height:30px; background:#eee;}*/
+		/*#box p:nth-child(2n + 1){background:#05a;}
+		#box p:nth-last-child(2n + 1){background:#900;}*/
+		/*#box p:nth-last-of-type(odd){background:#05a;}
+		#box p:nth-last-of-type(even){background:#900;}*/
+		.boxs{padding:4px; border:1px #d1d1d1 solid;}
+		/*.boxs p:first-child:last-child{height:30px; background:#05a;}*/
+		/*.boxs p:nth-child(0):nth-last-child(0){height:30px; background:#05a;}*/
+		.boxs p:only-child{height:30px; background:#05a;}
+        </style>
+    </head>
+    
+    <body>
+    	<div class="boxs">
+        	<p></p>
+        </div>
+    	<div class="boxs">
+        	<p></p>
+        </div>
+    	<!--<div id="box">
+        	<p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>-->
+    	<!--<div id="box">
+        	<p>结构性伪类选择器</p>
+            <p>结构性伪类选择器</p>
+            <p class="abc">结构性伪类选择器 abc</p>
+            <p>结构性伪类选择器</p>
+            <p class="abc">结构性伪类选择器 abc</p>
+            <p>结构性伪类选择器</p>
+            <p>结构性伪类选择器</p>
+            <p class="abc">结构性伪类选择器 abc</p>
+            <p>结构性伪类选择器</p>
+            <p></p>
+            <p></p>
+            <p>asdfasdf</p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>-->
+    </body>
+</html>

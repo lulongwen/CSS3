@@ -1,0 +1,575 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>CSS3选择器-CSS3高级选择器</title>
+<meta name="keywords" content="CSS3选择器,CSS3高级选择器,CSS3 selector">
+<meta name="description" content="前端必须掌握的CSS3高级选择器，CSS3提供非常丰富的CSS选择器，但是由于某些选择器的浏览器兼容性不一致，使用的比例不是太高，但在移动端，可以放心的使用CSS3选择器。下面来介绍CSS3高级选择器。">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="/templets/default/assets/css/lulongwen.css" />
+</head>
+<body>
+<header class="top-bar">
+  <nav class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">
+        <a href="http://wwww.lulongwen.com" title="卢珑文">
+          <strong>营销型设计师 卢珑文</strong>
+        </a>
+      </li>
+      <li> <a href="/front-end-developer" title="WEB前端">WEB 前端</a>
+        <ul class="menu vertical">
+          <li><a href="/UI-framework">UI 框架</a></li>
+          <li><a href="/HTML5">HTML5</a></li>
+          <li><a href="/HTML5/hybridApp">HybridAPP</a></li>
+          <li><a href="/HTML5/js">JavaScript</a></li>
+        </ul>
+      </li>
+      <li> <a href="/UI" title="UI设计">UI 设计</a>
+        <ul class="menu vertical">
+          <li><a href="/UI/photoshop">PhotoShop</a></li>
+          <li><a href="/VI/album-design">画册设计</a></li>
+          <li><a href="/VI">VI视觉设计</a></li>
+          <li><a href="/UI/word-top-creative">全球顶尖创意</a></li>
+        </ul>
+      </li>
+      <li><a href="/E-marketing">网络营销</a></li>
+      <li><a href="/interactive-animation">交互动画</a></li>
+    </ul>
+  </nav>
+  
+  <!-- topbar-right -->
+  <aside class="top-bar-right">
+    <h5 class="small">不会敲代码的设计师不是好的网络营销师</h5>
+  </aside>
+</header>
+
+<div class="row">
+  <section class="column medium-12 medium-centered large-8 large-centered text-center">
+    <h1>CSS3高级选择器</h1>
+    <p class="small">掌握了CSS3高级选择器，才能真正领略CSS的巨大灵活性</p>
+    <hr>
+  </section>
+</div>
+
+
+<div class="row relative">
+  <section class="column medium-8 medium-centered large-8 large-centered">
+    <p>CSS3提供非常丰富的CSS选择器，但是由于某些选择器的浏览器兼容性不一致，使用的比例不是太高，但在移动端，可以放心的使用CSS3选择器。<br>
+      也许已经掌握了id、class、父子选择器等基本的css选择器。但这远远不是CSS3选择器的全部。最近在网络上看到了30个常用的CSS选择器，决定再扩充整理一下CSS3选择器。</p>
+    <h3>CSS权重</h3>
+    <p>CSS权重就是样式优先级的高低</p>
+<pre>
+  !important 提升样式优先级权重
+  !important &gt;
+  style（行内样式） &gt; 
+  id &gt; 
+  class &gt; 
+  标签选择器 &gt;  载入样式以最后载入的为准
+  浏览器默认
+
+可继承的样式： 
+  font-size font-family color,ul,ol, li, dl, dd, dt;
+
+不可继承的样式：
+  border padding margin width height
+</pre><br>
+<h3>CSS 特性</h3>
+<strong>1 继承</strong>
+<p>子元素，继承父元素的属性</p>
+<strong>2 覆盖</strong>
+<p>选择器的优先级别来修改当前标签的CSS属性</p>
+<p>浏览器有自带的样式权重高于继承，导致a ，h1-h6，button等没有继承父元素的属性</p>
+<strong>3 叠加</strong>
+<p>几个属性值累加在一起，后面的覆盖前面的</p><br>
+    <h2>1. * 通配符选择器</h2>
+    <pre>
+    *{
+      margin: 0;
+      padding: 0;
+     }
+    </pre>
+    <p> * 选择符会在页面上的每一个元素上起作用。web设计者经常用它将页面中所有元素的margin和padding设置为0。<br>
+      *选择符也可以在子选择器中使用。</p>
+    <pre>
+      #box *{
+        border: 1px solid black;
+      }
+    </pre>
+    <p>上面的代码中会应用于id为box元素的所有子元素中。 除非必要，<b>不建议在页面中过的的使用 * 选择符，因为 * 的作用域太大，相当耗浏览器资源。 </b> <br>
+      兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera</p>
+    <h2>2. #box id选择器</h2>
+    <pre>
+      #box {
+        width: 960px;
+        margin: auto;
+       }
+    </pre>
+    #号作用域有相应id的元素。id是我们最常用的css选择器之一。id选择器的优势是精准，高优先级（优先级基数为100，远高于class的10），
+    <p>作为javascript脚本的不二选择，同样缺点也很明显优先级过高，重用性差，所以在使用id选择器前，我们最好问下自己，真的到了非用id选择器的地步？ <br>
+      兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera</p>
+    <h2>3. .box class选择器</h2>
+    <pre>
+      .error {
+        color: red;
+      }
+    </pre>
+    <p>这是一个class(类)选择器。class选择器与id选择器的不同是class选择器能作用于期望样式化的一组元素。 <br>
+      兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera </p>
+    <h2>4. E F 后代选择器</h2>
+    <pre>
+      li a {
+        text-decoration: none;
+        }
+    </pre>
+    <p>后代选择器。用于选取X元素下子元素Y，要留意的点是，这种方式的选择器将选取其下所有匹配的子元素，无视层级，所以有的情况是不宜使用的；<br>
+      比如上述的代码去掉li下的所有a的下划线，但li里面还有个ul，我不希望ul下的li的a去掉下划线。使用此后代选择器的时候要考虑是否希望某样式对所有子孙元素都起作用。这种后代选择器还有个作用，就是创建类似命名空间的作用。比如上述代码样式的作用域明显为li。<br>
+      兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera </p>
+    <h2>5. E标签选择器</h2>
+    <pre>
+    a { color: red; }  
+    ul { margin-left: 0; }
+    </pre>
+    <p>标签选择器。使用标签选择器作用于作用域范围内的所有对应标签。优先级仅仅比*高。<br>
+      兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera</p>
+    <h2>6. E:visited和E:link </h2>
+    <pre>
+    a:link { color: red; }   
+    a:visted { color: purple; }
+    </pre>
+    使用:link伪类作用于未点击过的链接标签。:hover伪类作用于点击过的链接。 <br>
+    兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+    <h2>7. E+F</h2>
+    <pre>
+    ul + p {
+        color: red;
+     }
+    </pre>
+    相邻选择器，上述代码中就会匹配在ul后面的第一个p，将段落内的文字颜色设置为红色。(只匹配第一个元素) <br>
+    兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+    <h2>8. E > F</h2>
+    <pre>
+    div#box > ul {
+       border: 1px solid black;
+     } 
+    &lt;div id="box">
+      &lt;ul>
+         &lt;li> List Item
+           &lt;ul>
+              &lt;li> Child &lt;/li>
+           &lt;/ul>
+         &lt;/li>
+         &lt;li> List Item &lt;/li>
+         &lt;li> List Item &lt;/li>
+         &lt;li> List Item &lt;/li>
+      &lt;/ul> 
+    &lt;/div>
+    </pre>
+    <p>子选择器。与后代选择器E F不同的是，子选择器只对E下的直接子级Y起作用。在上面的css和html例子中，div#box > ul仅对box中最近一级的ul起作用。 <br>
+      从理论上来讲E > F是值得提倡选择器，可惜IE6不支持。 <br>
+      兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera </p>
+    <h2>9. E ~ F</h2>
+    <pre>
+    ul ~ p {
+        color: red;
+     }
+    </pre>
+    相邻选择器，与前面提到的E + F 不同的是，E ~ F匹配与E相同级别的所有F元素，而E + F只匹配第一个。 <br>
+    兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+    <h2>10. E[title]</h2>
+    <pre>
+    a[title] {
+        color: green;
+     }
+    </pre>
+    <p>属性选择器。比如上述代码匹配的是带有title属性的链接元素。<br>
+      兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera</p>
+    <h2>11. E[title="foo"]</h2>
+    <pre>
+    a[href="http://lulongwen.com"] {
+       color: #1f6053; 
+    }
+    </pre>
+    <p>属性选择器。 上面的代码匹配所有拥有href属性，且href为http://lulongwen.com的所有链接。</p>
+    这个功能很好，但是多少又有些局限。如果我们希望匹配href包含lulongwen.com的所有链接该怎么做呢？看通配选择器。<br>
+    兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+    </p>
+    <h2>12. E[title*="lulongwen.com"]</h2>
+    <pre>
+    a[href*="lulongwen.com"] {
+       color: #1f6053;
+     }
+    </pre>
+    <p>属性选择器。正如我们想要的，上面代码匹配的是href中包含"lulongwen.com"的所有链接。<br>
+    <p>兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera</p>
+    <h2>13. E[href^="http"]</h2>
+    <pre>
+    a[href^="http"] {
+        background: url(path/icon.png) no-repeat;
+        padding-left: 10px;
+     }
+    </pre>
+    <p>属性选择器。上面代码匹配的是href中所有以http开头的链接。 <br>
+      兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera</p>
+    <h2>13. E[href$=".jpg"]</h2>
+    <pre>
+    a[href^="http"] {
+      background: url(path/icon.png) no-repeat;
+      padding-left: 10px;
+     }
+    </pre>
+    <p>属性选择器。在属性选择器中使用$，用于匹配结尾为特定字符串的元素。在上面代码中匹配的是所有链接到扩展名为.jpg图片的链接。（注意，这里仅仅是.jpg图片，如果要作用于所有图片链接该怎么做呢，看下一个选择器。）<br>
+      兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera</p>
+    <h2>14. E[data-*="foo"]</h2>
+    <p>在上一个选择器中提到如何匹配所有图片链接。如果使用E[href$=".jpg"]实现，需要这样做：</p>
+    <pre>
+    a[href$=".jpg"],
+    a[href$=".jpeg"],
+    a[href$=".png"],
+    a[href$=".gif"] {
+       color: red;
+    }
+    </pre>
+    <p>看上去比较麻烦。另一个解决办法是为所有的图片链接加一个特定的属性，例如'data-file'<br>
+      html代码
+    <pre>
+    &lt;a href="path/to/image.jpg" data-filetype="image"> 图片链接 &lt;/a>
+    </pre>
+    css代码如下：
+    <pre>
+    a[data-filetype="image"] {
+        color: red;
+     }
+    </pre>
+    <p>这样所有链接到图片的链接字体颜色为红色。<br>
+      兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera</p>
+    <h2>15. E[foo~="bar"]</h2>
+    <p>属性选择器。属性选择器中的波浪线符号可以让我们匹配属性值中用空格分隔的多个值中的一个。看下面例子：</p>
+    html代码
+    <pre>
+    &lt;a href="path/to/image.jpg" data-info="external image"> Click Me, Fool &lt;/a>
+    </pre>
+    css代码
+    <pre>
+    a[data-info~="external"] {
+          color: red;
+       }
+    a[data-info~="image"] {
+          border: 1px solid black;
+    }
+    </pre>
+    <p>在上面例子中，匹配data-info属性中包含"external"链接的字体颜色为红色。<br>
+      匹配data-info属性中包含"image"的链接设置黑色边框。<br>
+      兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera</p>
+    <h2>17. E:checked</h2>
+    <p>checked伪类用来匹配处于选定状态的界面元素，如radio、checkbox。</p>
+    <pre>
+    input[type=radio]:checked {
+        border: 1px solid black;
+     }
+    </pre>
+    <p>上面代码中匹配的是所有处于选定状态的单选radio，设置1px的黑色边框。<br>
+      兼容浏览器：IE9+、Firefox、Chrome、Safari、Opera</p>
+    <h2>18. E:after和E:before</h2>
+    <p>这两个伪类与content结合用于在元素的前面或者后面追加内容，看一个简单的例子：</p>
+    <pre>
+    h1:after {content:url(/i/logo.gif)}
+    </pre>
+    <p>上面的代码实现了在h1标题的后面显示一张图片。</p>
+    <p>我们也经常用它来实现清除浮动，写法如下：</p>
+    <pre>
+    .clearfix:after {
+      content: "";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      font-size: 0;
+      height: 0; 
+    }       
+    .clearfix {
+      *display: inline-block; 
+      _height: 1%;
+    }
+    </pre>
+    <h2>19. E:hover</h2>
+    <pre>
+    div:hover {
+      background: #e3e3e3;
+    }
+    </pre>
+    <p>:hover伪类设定当鼠标划过时元素的样式。上面代码中设定了div划过时的背景色。<br>
+      需要注意的是，在ie 6中，:hover只能用于链接元素。<br>
+    <p>这里分享一个经验，在设定链接划过时出现下滑线时，使用border-bottom会比text-decoration显得更漂亮些。代码如下：</p>
+    <pre>
+    a:hover {
+      border-bottom: 1px solid black;
+    }
+    </pre>
+    <p>兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera</p>
+    <h2>20. E:not(selector)</h2>
+    <pre>
+    div:not(#box) {
+      color: blue;
+    }
+    </pre>
+    <p>否定伪类选择器用来在匹配元素时排除某些元素。在上面的例子中，设定除了id为box的div元素字体颜色为blue。<br>
+      兼容浏览器：IE9+、Firefox、Chrome、Safari、Opera</p>
+    <h2>21. E::pseudoElement</h2>
+    <p>::伪类用于给元素片段添加样式。比如一个段落的第一个字母或者第一行。<br>
+      需要注意的是，这个::伪类只能用于块状元素。</p>
+    <p>下面的代码设定了段落中第一个字母的样式：</p>
+    <pre>
+    p::first-letter {
+      float: left;
+      font-size: 2em;
+      font-weight: bold;
+      font-family: cursive;
+      padding-right: 2px;
+    }
+    </pre>
+    下面的代码中设定了段落中第一行的样式：
+    <pre>
+    p::first-line {
+      font-weight: bold;
+      font-size: 1.2em; 
+    }
+    </pre>
+    <p>兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera <br>
+      （IE6竟然支持，有些意外啊。）</p>
+    <h2>22. E:nth-child(n)</h2>
+    <pre>
+    li:nth-child(3) {
+      color: red;
+    }
+    </pre>
+    <p>这个伪类用于设定一个序列元素（比如li、tr）中的第n个元素（从1开始算起）的样式。在上面例子中，设定第三个列表元素li的字体颜色为红色。<br>
+      看一个更灵活的用法，在下面例子中设定第偶数个元素的样式，可以用它来实现隔行换色：</p>
+    <pre>
+    tr:nth-child(2n) {
+      background-color: gray;
+    }
+    </pre>
+    兼容浏览器：IE9+、Firefox、Chrome、Safari
+    <h2>23. E:nth-last-child(n)</h2>
+    <pre>
+    li:nth-last-child(2) {
+      color: red;
+    }
+    </pre>
+    <p>与E:nth-child(n)功能类似，不同的是它从一个序列的最后一个元素开始算起。上面例子中设定倒数第二个列表元素的字体颜色。<br>
+      兼容浏览器：IE9+、Firefox、Chrome、Safari、Opera</p>
+    <h2>24. E:nth-of-type(n)</h2>
+    <pre>
+    ul:nth-of-type(3) {
+      border: 1px solid black;
+    }
+    </pre>
+    <p>与E:nth-child(n)功能类似，不同的是它匹配的不是某个序列元素，而是元素类型。例如上面的代码设置页面中出现的第三个无序列表ul的边框。<br>
+      兼容浏览器：IE9+、Firefox、Chrome、Safari</p>
+    <h2>25. E:nth-last-of-type(n)</h2>
+    <pre>
+      ul:nth-last-of-type(3) {
+        border: 1px solid black;
+      }
+    </pre>
+    <p>与E:nth-of-type(n)功能类似，不同的是它从元素最后一次出现开始算起。上面例子中设定倒数第三个无序列表的边框<br>
+      兼容浏览器：IE9+、Firefox、Chrome、Safari、Opera</p>
+    <h2>26. E:first-child</h2>
+    <p>:first-child伪类用于匹配一个序列的第一个元素。我们经常用它来实现一个序列的第一个元素或最后一个元素的上（下）边框，如：</p>
+    <pre>
+    ul:nth-last-of-type(3) {
+      border: 1px solid black;
+    }
+    </pre>
+    兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+    <h2>27. E:last-child</h2>
+    <pre>
+      ul > li:last-child {
+        border-bottom:none;
+      }
+    </pre>
+    <p>与:first-child类似，它匹配的是序列中的最后一个元素。<br>
+      兼容浏览器：IE9+、Firefox、Chrome、Safari、Opera</p>
+    <h2>28. E:only-child</h2>
+    <pre>
+      div p:only-child {
+        color: red;
+      }
+    </pre>
+    <p>这个伪类用的比较少。在上面例子中匹配的是div下有且仅有一个的p，也就是说，如果div内有多个p，将不匹配。</p>
+    <pre>
+      &lt;div>
+        &lt;p> My paragraph here. &lt;/p>
+      &lt;/div>
+
+      &lt;div>
+        &lt;p> Two paragraphs total. &lt;/p>
+        &lt;p> Two paragraphs total. &lt;/p>
+      &lt;/div>
+    </pre>
+    <p>在上面代码中第一个div中的段落p将会被匹配，而第二个div中的p则不会。<br>
+      兼容浏览器：IE9+、Firefox、Chrome、Safari、Opera</p>
+    <h2>29. E:only-of-type</h2>
+    <pre>
+      li:only-of-type {
+        font-weight: bold;
+      }
+    </pre>
+    <p>这个伪类匹配的是，在它上级容器下只有它一个子元素，它没有邻居元素。<br>
+      例如上面代码匹配仅有一个列表项的列表元素。<br>
+      兼容浏览器：IE9+、Firefox、Chrome、Safari、Opera</p>
+    <h2>30. E:first-of-type</h2>
+    <p>:first-of-type伪类与:nth-of-type(1)效果相同，匹配出现的第一个元素。我们来看个例子：</p>
+    <pre>
+    &lt;div>
+        &lt;p> My paragraph here. &lt;/p>
+        &lt;ul>
+           &lt;li> List Item 1 &lt;/li>
+           &lt;li> List Item 2 &lt;/li>
+        &lt;/ul>
+        &lt;ul>
+           &lt;li> List Item 3 &lt;/li>
+           &lt;li> List Item 4 &lt;/li>
+        &lt;/ul> 
+    &lt;/div>
+    </pre>
+    <p>上面的html代码中，如果我们希望仅匹配List Item 2列表项该如何做呢：</p>
+    方案一：
+    <pre>
+      ul:first-of-type > li:nth-child(2) {
+        font-weight: bold; 
+      }
+    </pre>
+    方案二：
+    <pre>
+    p + ul li:last-child {
+      font-weight: bold;
+    }
+    </pre>
+    方案三：
+    <pre>
+    ul:first-of-type li:nth-last-child(1) {
+      font-weight: bold;
+    }
+    </pre>
+    <p>兼容浏览器：IE9+、Firefox、Chrome、Safari、Opera。</p>
+    <h4>CSS3选择器总结：</h4>
+    <p>如果你需要兼容IE9以下浏览器，如IE6 ~ IE8，在使用CSS选择器时一定要注意此选择器是否兼容。在设计时，你可以参考浏览器兼容性列表，也可以通过CSS的优雅降级或JS方法来实现兼容。</p>
+    <p>我们在使用jQuery的选择器时，要尽可能的使用这些原生的CSS3选择器，因为jQuery的选择器引擎会通过浏览器内置解析它们，这样会获得更快的速度。</p>
+    <blockquote cite="http://lulongwen.com">
+      <p>参考资料：火狐CSS3选择器 http://mozilla.com.cn/thread-21668-1-1.html</p>
+      <p>原标题：30个最常用css选择器解析</p>
+      <p><strong>CSS3 高级选择器</strong> 卢珑文整理</p>
+    </blockquote>
+  </section>
+
+  <div class="medium-3 columns" id="cssSelector">
+    <ul class="accordion collapse" data-accordion>
+      <li class="accordion-item" data-accordion-item> <a href="#" class="accordion-title">伪类选择器</a>
+        <div class="accordion-content" data-tab-content> 
+          <strong>.box</strong>
+          <strong>.box</strong>
+          <strong>.box</strong>
+          <strong>.box</strong>
+          <strong>.box</strong>
+        </div>
+      </li>
+      <li class="accordion-item is-active" data-accordion-item> <a href="#" class="accordion-title">属性选择器</a>
+        <div class="accordion-content" data-tab-content>
+          <strong class="active">.box</strong>
+          <strong>.box</strong>
+          <strong>.box</strong>
+          <strong>.box</strong>
+          <strong>.box</strong>
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item> <a href="#" class="accordion-title">伪元素选择器</a>
+        <div class="accordion-content" data-tab-content>
+          <strong>.box</strong>
+          <strong>.box</strong>
+          <strong>.box</strong>
+          <strong>.box</strong>
+          <strong>.box</strong>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- footer start-->
+<div class="footer">
+  <div class="row">
+    <section class="small-12 medium-3 large-4 columns">
+      <h4>
+        <a href="">
+          <img src="/lulongwen/lulongwen-photo/lulongwen-1.jpg" alt="珑文的假期">
+        </a>
+      </h4>
+      <p>珑文的假期</p>
+      <p class="small"><!-- 世界旅游组织指旅行的定义是外出最少离家55公里。行万里路，读万卷书， -->假期是一次发现，发现另一个自己;真正的旅行让我们直面自我,不仅让我看到了世界，更让我们看到自己在其中的位置。生命将引领你走向何方？探索的激情，发现的喜悦</p>
+    </section>
+    <section class="small-12 medium-3 large-4 columns">
+      <h4><a href=""><img src="/lulongwen/lulongwen-photo/lulongwen-2.jpg" alt="珑文的圈子"></a></h4>
+      <p>珑文的圈子</p>
+      <p class="small">“圈子”指的是拥有某种相同或相近的爱好、兴趣或特质。圈子营销是指针对这类人群，深挖他们的需求，以此为基础进行定位并整合各类资源进行营销活动</p>
+    </section>
+    <section class="small-6 medium-3 large-2 columns">
+      <h4><strong>珑文资源分享</strong></h4>
+      <ul class="no-bullet">
+        <li><a href="/UI-framework/component">组件</a></li>
+        <li><a href="javascript:">图片</a></li>
+        <li><a href="javascript:">视频</a></li>
+        <li><a href="javascript:">读书</a></li>
+        <li><a href="https://shop116092164.taobao.com/">珑文汽车配件</a></li>
+      <ul>
+    </section>
+    <section class="small-6 medium-3 large-2 columns">
+      <h4><strong>卢珑文</strong></h4>
+      <ul class="no-bullet">
+        <li><a href="/lulongwen/moments">珑文的圈子</a></li>
+        <li><a href="javascript:">珑文的计划</a></li>
+        <li><a href="javascript:">珑文的作品</a></li>
+        <li><a href="/lulongwen/happiness">珑文的假期</a></li>
+        <li><a href="javascript:">联系卢珑文</a></li>
+      <ul>
+    </section>
+  </div>
+</div>
+<footer class="row" role="footer">
+  <nav class="medium-8 columns">
+    <ul class="menu">
+      <li><a href="/UI"><strong>UI</strong></a></li>
+      <li><a href="/VI"><strong>VI</strong></a></li>
+      <li><a href="/front-end-developer"><strong>全栈开发</strong></a></li>
+      <li><a href="/E-marketing"><strong>网络营销</strong></a></li>
+      <li><a href="/interactive-animation"><strong>交互动画</strong></a></li>
+    </ul>
+  </nav>
+  <aside class="medium-4 columns clearfix">
+    <p class="menu-text text-right"> 
+      <a href="/">卢珑文的职业规划： 
+        <strong>全栈开发</strong></a> &gt;
+      <a href=""><strong>UI设计</strong></a> &gt;
+      <a href=""><strong>交互设计</strong></a>
+    </p>
+  </aside>
+  <p class="text-center">Copyright © 2012-2016 工信部备案号：
+    <a rel="external nofollow" href="http://www.miitbeian.gov.cn/" target="_blank">苏ICP备12064103号</a> 
+    <a href="/" title="卢珑文">卢珑文</a> 
+  </p>
+</footer>
+
+<script src="/templets/default/assets/js/jquery.min.js"></script>
+<script src="/templets/default/assets/js/foundation.js"></script>
+<script src="/lulongwen/source/js/prettify.js"></script> 
+<script>
+$(function(){
+    $(document).foundation();
+    $("pre").addClass("prettyprint linenums");
+    prettyPrint(); //代替body上的onload事件加载该方法
+});
+</script>
+</body>
+</html>

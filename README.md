@@ -1,5 +1,23 @@
 # CSS3核心知识点
 
+### CSS 选择器
+
+### 背景 & 颜色 & 边框
+
+### 字体 & 描边 & 倒影
+
+### 动画 transform & transition & keyframes
+
+### @media 媒体查询
+
+### flex 弹性盒
+
+###
+
+###
+
+width: 50},
+
 ## CSS进阶顺序
 1. 基础
   * 能还原设计稿、兼容各种主流浏览器
@@ -12,15 +30,12 @@
   * 适应移动设备的发展
   
 
-## Css 规范
-### Reset.css样式重置
-  * normalize.css
-  * rebot.css
 
-### Css规范
-### Css hack兼容性
+### Reset.css样式重置
+* normalize.css
+* rebot.css
+
 ```
-<<<<<<< HEAD
   Css 选择器
   Css 盒模型
   Flex 弹性盒模型
@@ -48,13 +63,8 @@
     栅格系统
 
   Css3 工具
-```
-
-
-=======
   reset.css + variable.css + font.css + layout.css
   csshack.css
->>>>>>> sass
 
 ```
 

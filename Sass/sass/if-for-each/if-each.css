@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/* @if @for @each  @while */
+/* @for through 【1 到 10】类似于JS中的 for */
+.item-1 {
+  width: 10px; }
+
+.item-2 {
+  width: 20px; }
+
+.item-3 {
+  width: 30px; }
+
+.item-4 {
+  width: 40px; }
+
+.item-5 {
+  width: 50px; }
+
+.item-6 {
+  width: 60px; }
+
+.item-7 {
+  width: 70px; }
+
+.item-8 {
+  width: 80px; }
+
+.item-9 {
+  width: 90px; }
+
+.item-10 {
+  width: 100px; }
+
+/* @for to【1 到 9】 类似于JS中的 for */
+.item-1 {
+  width: 10px; }
+
+.item-2 {
+  width: 20px; }
+
+.item-3 {
+  width: 30px; }
+
+.item-4 {
+  width: 40px; }
+
+.item-5 {
+  width: 50px; }
+
+.item-6 {
+  width: 60px; }
+
+.item-7 {
+  width: 70px; }
+
+.item-8 {
+  width: 80px; }
+
+.item-9 {
+  width: 90px; }
+
+/* @while */
+.list-10 {
+  width: 120px; }
+
+.list-8 {
+  width: 96px; }
+
+.list-6 {
+  width: 72px; }
+
+.list-4 {
+  width: 48px; }
+
+.list-2 {
+  width: 24px; }
+
+.list-0 {
+  width: 0px; }
+
+/* @each */
+.icon-user {
+  width: 200px; }
+
+.icon-pass {
+  width: 200px; }
+
+.icon-checked {
+  width: 200px; }
+
+.icon-selected {
+  width: 200px; }
+
+.icon-parent son {
+  width: 200px; }

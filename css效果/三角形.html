@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CSS写的各种三角</title>
+  <style>
+    .code {
+      width: 650px;
+      height: 200px;
+      padding: 20px;
+      float: left;
+      font: 16px/20px Monaco, Menlo;
+      border: 1px solid #ccc;
+      border-radius:  5px;
+    }
+    .wrapper {
+      position: relative;
+      float: left;
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .wrapper i {
+      position: absolute;
+      width: 0;
+      height: 0;
+      cursor:  pointer;
+    }
+    /* 左上 */
+    .lt {
+      border-width: 20px 20px 0 0;
+      border-style: solid solid dashed dashed;
+      border-color: red transparent transparent;
+      top: 65px;
+      left: 65px;
+    }
+    /* 上 */
+    .t {
+      border-width: 15px;
+      border-style:  dashed dashed solid;
+      border-color: transparent transparent blue transparent;
+      top: 35px;
+      left: 85px;
+    }
+    /* 右上 */
+    .rt {
+      border-width:  20px 0 0 20px;
+      border-style:  solid dashed dashed;
+      border-color:  red transparent transparent;
+      top: 65px;
+      left: 115px;
+    }
+    /* 右 */
+    .r {
+      border-width: 15px;
+      border-style:  dashed dashed dashed solid;
+      border-color:  transparent transparent transparent blue;
+      top: 85px;
+      left:  135px;
+    }
+    /* 右下 */
+    .rb {
+      border-width:  20px 20px 0 0;
+      border-style:  dashed solid dashed dashed;
+      border-color:  transparent red transparent transparent;
+      top: 115px;
+      left: 115px;
+    }
+    /* 下 */
+    .b {
+      border-width:  15px;
+      border-style:  solid dashed dashed;
+      border-color:  blue transparent transparent;
+      top: 135px;
+      left: 85px;
+    }
+    /* 左下 */
+    .lb {
+      border-width:  20px 0 0 20px;
+      border-style:  dashed dashed solid;
+      border-color:  transparent transparent transparent red;
+      top: 115px;
+      left: 65px;
+    }
+    /* 左 */
+    .l {
+      border-width: 15px;
+      border-style:  dashed solid dashed dashed;
+      border-color:  transparent blue transparent transparent;
+      top: 85px;
+      left: 35px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <i class="lt"></i> 
+    <i class="t"></i>
+    <i class="rt"></i>
+    <i class="r"></i>
+    <i class="rb"></i>
+    <i class="b"></i>
+    <i class="lb"></i>
+    <i class="l"></i>
+  </div>
+  <div class="code">
+    display:inline-block; width: 0; height: 0; <br>
+    border-width: 15px; <br>
+    border-style: dashed dashed solid; <br>
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgb(0, 0, 255); <br>
+  </div> 
+
+  <script>
+    let el = document.querySelectorAll('i'), str = '',
+      code = document.querySelector('.code')
+        
+    for(var i =0, length =el.length; i <length; i++){
+      el[i].onclick = function (){
+        str += 'display:inline-block; width: 0; height: 0;<br>';
+        str += 'border-width: ' + getStyle(this,'borderWidth') + ';<br>';
+        str += 'border-style: ' + getStyle(this,'borderStyle') + ';<br>';
+        str += 'border-color: ' + getStyle(this,'borderColor') + ';<br>';
+        
+        code.innerHTML = str;
+        str = '';
+      }
+    }
+    function getStyle(obj,name){
+      return obj.currentStyle ? obj.currentStyle[name] :  getComputedStyle(obj,null)[name];
+    }
+  </script>
+</body>
+</html>

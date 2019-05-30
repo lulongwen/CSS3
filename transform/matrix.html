@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transform: matrix效果</title>
+  <style>
+    button {
+      margin:0 15px;
+      padding: 10px 15px;
+      line-height: 17px; 
+      border-radius: 5px; 
+      background:#F5F5F5;
+      color:gray;
+      outline: none;
+    }
+    button:hover {
+      background: #ddd;
+      box-shadow: -1px -1px -1px green;
+    }
+    #module {
+      width: 100px;
+      height: 100px;
+      margin: 3em auto;
+      background: #ddd; 
+      box-shadow: 1px 1px 1px pink;
+      text-shadow: 1px 1px 1px green; 
+      line-height: 100px;
+      font-size: 50px;
+      font-weight bolder;
+    }
+    .matrix_1_0_0_1 {
+      transform: matrix(1,0,0,1,0,0); 
+    }
+    .matrix_1_0_0_2 {
+     transform: matrix(1,0,0,2,0,0); 
+    }
+    .matrix_2_0_0_1{
+      transform: matrix(2,0,0,1,0,0); 
+    }
+    .matrix_2_0_0_2{
+      transform: matrix(2,0,0,2,0,0);     
+    }
+    .matrix_2_1_0_2 {
+      transform: matrix(2,1,0,2,0,0);     
+    }
+    .matrix_2_0_1_2{
+      transform: matrix(2,0,1,2,0,0);     
+    }
+    .matrix_2_1_1_2{
+      transform: matrix(2,1,1,2,0,0);     
+    }
+    .matrix_1_1_0_1{
+      transform: matrix(1,1,0,1,0,0);     
+    }
+  </style>
+
+<script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+  function matrix(transform) {
+    $("#module").removeAttr("class").prop("class", transform)
+  }
+</script>
+</head>
+<body>
+  <div id="module"></div>
+
+  <button type="button" onclick="matrix('matrix_1_0_0_2')">matrix_1_0_0_2</button>
+  <button type="button" onclick="matrix('matrix_2_0_0_1')">matrix_2_0_0_1</button>
+  <button type="button" onclick="matrix('matrix_2_0_0_2')">matrix_2_0_0_2</button>
+  <button type="button" onclick="matrix('matrix_1_0_0_1')">matrix_1_0_0_1</button>   
+  <button type="button" onclick="matrix('matrix_2_1_0_2')">matrix_2_1_0_2</button>    
+  <button type="button" onclick="matrix('matrix_2_0_1_2')">matrix_2_0_1_2</button>
+  <button type="button" onclick="matrix('matrix_2_1_1_2')">matrix_2_1_1_2</button>   
+  <button type="button" onclick="matrix('matrix_1_1_0_1')">matrix_1_1_0_1</button>
+</body>
+</html>

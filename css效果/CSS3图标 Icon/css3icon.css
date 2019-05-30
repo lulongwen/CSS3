@@ -1,0 +1,106 @@
+html{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,*::before,*::after{
+  box-sizing:inherit;
+}
+html,body{height:100%}
+body{
+  margin: 0;
+  background-color: #12171A;
+  color: #516774;
+  font-family: "Source Sans pro", sans-serif;
+}
+h1 {
+  font-size: 5em;
+  font-weight: normal;
+  text-align: center;
+  margin: 100px auto 30px;
+  font-weight: 300;
+}
+h2 {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 300;
+}
+p {
+  text-align: center;
+}
+
+.header{
+  margin: 30px auto;
+  padding:50px;
+  text-align: center;
+}
+.sBtn{
+  background-color: #EE3636;
+  padding: 2rem 1rem;
+  transition: .3s;
+  cursor: pointer;
+  border-radius: 0.57143rem;
+  display: inline-block;
+  margin: 0 1em;
+}
+
+.lines{
+  display: inline-block;
+  width: 4rem;
+  height: 0.57143rem;
+  background: #ecf0f1;
+  border-radius: 0.28571rem;
+  transition: 0.3s;
+  position: relative;
+}
+.lines:before, .lines:after {
+  display: inline-block;
+  width: 4rem;
+  height: 0.57143rem;
+  background: #ecf0f1;
+  border-radius: 0.28571rem;
+  transition: 0.3s;
+  position: absolute;
+  left: 0;
+  content: '';
+  -webkit-transform-origin: 0.28571rem center;
+  transform-origin: 0.28571rem center;
+}
+.lines:before {
+  top: 1rem;
+}
+.lines:after {
+  top: -1rem;
+}
+
+/*.header span hover style*/
+.sBtn:hover .lines:before {
+  top: 1.14286rem;
+}
+.sBtn:hover .lines:after {
+  top: -1.14286rem;
+}
+/* 添加的样式 toggleClass('close')*/
+.sBtn.close {
+  -webkit-transform: scale3d(0.8, 0.8, 0.8);
+  transform: scale3d(0.8, 0.8, 0.8);
+}
+.sBtn.close .lines {
+  background: transparent;
+}
+.sBtn.close .lines:before, .sBtn.close .lines:after {
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  top: 0;
+  width: 4rem;
+}
+.sBtn.close .lines:before {
+  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+  transform: rotate3d(0, 0, 1, 45deg);
+}
+.sBtn.close .lines:after {
+  -webkit-transform: rotate3d(0, 0, 1, -45deg);
+  transform: rotate3d(0, 0, 1, -45deg);
+}
+
+/* 001 END */

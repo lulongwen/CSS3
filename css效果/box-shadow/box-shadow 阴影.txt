@@ -1,0 +1,35 @@
+﻿
+阴影是不占空间的
+			x偏移 y偏移	模糊半径 阴影大小 阴影颜色
+box-shadow: 4px   6px   3px      5px       red;
+
+
+百度阴影
+	box-shadow:0 0 5px #888;
+	border-bottom:1px solid #ebebeb;
+	background-color:#fff;
+
+希捷首页导航条阴影：
+	height: 87px;
+  	border-bottom: 1px solid #eaeaea;
+  	background-color: #fff;
+ 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.35);
+
+氪周刊导航阴影：
+  background: #fefefe;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  border-bottom: 1px solid #e6eaed;
+
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+左边图片阴影
+	width:500px;
+	margin: 30px auto;
+	height:600px;
+	background-color: #090;
+	color: #55575D;
+	border-bottom: 4px solid #EEE;
+
+弹出层阴影
+	  box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0,0,0,0.15);
+	  background-color: #fff;

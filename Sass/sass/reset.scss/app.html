@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>APP meta 设置 </title>
+  <meta name="keywords" content="关键词">
+	<meta name="description" content="描述">
+
+  <!-- 禁止了把数字转化为拨号链接，点击禁止出现灰色区域 -->
+  <meta content="telephone=no" name="format-detection">
+  <meta name="msapplication-tap-highlight" content="no">
+</head>
+<body>
+  
+<script>
+// 解决1像素边框
+import 'styles/border.css'
+// 解决移动端 click 延迟300毫秒
+import fastClick from 'fastclick'
+// 轮播图
+import vueSwiper from 'vue-awesome-swiper' 
+
+fastClick.attach(document.body)
+</script>
+</body>
+</html>

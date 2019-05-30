@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>border-radius</title>
+	<style>
+	article{
+		width:800px;
+		margin:0 auto;
+		background-color: rgba(0, 0, 0, .01);
+	}
+	h3{
+		padding-bottom:15px;
+		border-bottom: 1px solid #ddd;
+	}
+	[id]{
+		margin: 15px 0;
+		padding:15px;
+	}
+	div[id] > section{
+		display: inline-block;
+	}
+	section + section{margin-top:20px;margin-left: 10px;}
+	section{
+		width:100px;
+		height:100px;
+		line-height: 100px;
+		text-align: center;
+		border: 1px solid #000;
+	}
+	section[class^=radius-round-]{
+		background-color: #999;
+	}
+	
+
+	.radius{
+		border-radius:50%;
+	}
+		/* 半圆 - top */
+	.radius-round{ 
+		height:50px;
+		border-radius: 50px 50px 0 0;
+	}
+		/* 半圆 - bottom */
+	.radius-round-bottom{
+		height:50px;
+		border-radius: 0 0 50px 50px;
+	}
+	/*  == 上半圆或下半圆，元素的【宽度】是【高度】的 2倍
+		圆角半径值为元素的高度值
+	*/
+
+		/* 半圆 - right */
+	.radius-round-right{
+		width:50px;
+		border-radius: 0 50px 50px 0;
+	}
+		/* 半圆 - left */
+	.radius-round-left{
+		width:50px;
+		border-radius: 50px 0 0 50px;
+	}
+	/*  == 左半圆或右半圆，元素的【高度】是【宽度】的 2倍
+		圆角半径值为元素的宽度值
+	*/
+
+
+	/*  ==扇形 三同，一不同
+		三同： 元素的宽度、高度、和圆角半径值相同
+		一不同： 圆角的位置不同
+	 */
+	.radius-quarterCircle{
+		background-color: #fafafa;
+		border-radius:100px 0 0 0;
+	}
+	.radius-quarterCircle-bottom{
+		background-color: #fafafa;
+		border-radius: 0 0 100px 0;
+	}
+	.radius-quarterCircle-right{
+		background-color: #fafafa;
+		border-radius:0 100px 0 0;
+	}
+	.radius-quarterCircle-left{
+		background-color: #fafafa;
+		border-radius:0 0 0 100px;
+	}
+
+		/* 水平: 宽度是高度的2倍 */
+	.radius-vertical{
+		height:50px;
+		border-radius: 100px / 50px;
+	}
+		/* 垂直:  高度是宽度的2倍 */
+	.radius-horizontal{
+		width:50px;
+		border-radius: 50px / 100px;
+	}
+
+
+
+
+
+
+
+
+
+
+	.radius-20 {
+		width: 350px;
+		height: 50px;
+		border: 30px solid orange;
+		border-width: 20px 5px 30px 60px;
+		border-radius: 50px;
+	}
+	.radius-last{
+		width: 350px;
+		height: 50px;
+		border: 30px solid orange;
+		border-width: 35px 35px 60px 30px;
+		border-color: orange red green blue;
+		border-radius: 80px;
+	}
+	</style>
+</head>
+<body>
+<article>
+	<h3>圆</h3>
+	<section class="radius"> 圆</section>
+
+	<h3>半圆</h3>
+	<div id="round">
+		<section class="radius-round">上半部 </section>
+		<section class="radius-round-right">右半部</section>
+		<section class="radius-round-bottom">下半部</section>
+		<section class="radius-round-left">左半部</section>
+	</div>
+		
+	<h3>扇形</h3>
+	<div id="quarterCircle">
+		<section class="radius-quarterCircle"></section>
+		<section class="radius-quarterCircle-right"></section>
+		<section class="radius-quarterCircle-bottom"></section>
+		<section class="radius-quarterCircle-left"></section>
+	</div>
+
+	<h3>椭圆</h3>
+	<div id="oval">
+		<section class="radius-vertical"></section>
+		<section class="radius-horizontal"></section>
+	</div>
+		
+
+	<br>
+	<h2>border-radius 特殊应用</h2>
+	<section class="radius-20"></section>
+	<section class="radius-last">last</section>
+
+</article>
+
+</body>
+</html>

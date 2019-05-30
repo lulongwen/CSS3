@@ -1,0 +1,190 @@
+@charset "utf-8";
+body{
+  font-family:Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 100%;
+  -webkit-user-select: none;
+  user-select: none;	
+	}
+h1{
+  color: #1ebcc5;
+  text-align: center;
+	}
+div{
+	width:1000px;height:600px;
+	margin:50px auto;
+	padding: 10px;
+	border-radius:5px;
+	border:1px solid #888;
+	}
+.btn{
+	display: inline-block;
+	width:26px;height:26px;
+	border:2px solid #333;
+	border-radius:50%;
+	border-right-color:transparent;
+	border-left-color:transparent;
+	margin:10px;
+	vertical-align:middle;
+    position: relative;
+    color: #ddd;
+    direction: ltr;
+	
+	animation:rotate 2s infinite linear;
+}
+.btn::before{
+	content:'';
+	width:0;height:0;
+	position: absolute;
+	border:6px solid transparent;
+	border-top-color:#333;
+	transform:rotate(-45deg);
+	right:-7px;
+	top:0;
+	}
+.btn::after{
+	content:'';
+	width:0;height:0;
+	position: absolute;
+	left:-7px;
+	bottom:0;
+	border:6px solid transparent;
+	border-top-color:#333;
+	transform:rotate(135deg);
+	}
+@keyframes rotate{
+	0%{transform:rotate(0deg)}
+	100%{transform:rotate(360deg)}
+	}
+/*.btn01 css*/
+.btn01,.link{
+	width:40px;
+	height:40px;
+	position: relative;
+	display: inline-block;
+	margin: 10px;
+	}
+.btn01::before,.btn01::after{
+	content:'';
+	position: absolute;
+	width:0;
+	height:0;
+	border:20px solid transparent;
+	}
+.btn01::before{
+	content:'';
+	border:none;
+	background-color: #555;
+	width:30%;
+	height:50%;
+	top:50%;
+	left:35%;
+	}
+.btn01::after{
+	left:0;
+	top:-50%;
+	border-bottom-color:#555;
+	}
+/*btn01结束*/
+.btn02{transform:rotate(-90deg);}	
+
+
+.btn03::before,.btn03::after{
+	content:'';
+	position: absolute;
+	width:0;
+	height:0;
+	border:20px solid transparent;
+	}
+.btn03::before{
+	width:50%;
+	height:35%;
+	top:35%;
+	left:0;
+	border: none;
+	background-color: #04cfb2;
+	}
+.btn03::after{
+	left:50%;
+	top:0;
+	border-left-color:#04CFB2;
+	}	
+	
+.btn04:before{
+	width:35%;height:50%;
+	left:35%;
+	top:0;
+	background-color: #f60;
+	border:0;}
+	
+.btn04::after{
+	left:0;
+	top:50%;
+	border-color:transparent;/*清除公用样式（border-bottom-color）*/
+	border-top-color:#f60;
+	}	
+
+/*link css*/
+.link::after{
+	content:'';
+	position: absolute;
+	width:0;
+	height:0;
+	border:20px solid transparent;
+	border-right-color:#4CBD0F;
+	left:-50%;
+	top:0;
+	}
+.link i{
+	width:20px;
+	height:26px;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	left:50%;
+	top:35%;}
+.link i::before{
+  content:'';
+  border-radius: 30px;
+  border: 12px solid #4CBD0F;
+  height: 50px;
+  width: 38px;
+  position: absolute;
+  top:0;
+  right:0;
+		}
+
+.l02::after{
+	border-color:transparent;
+	border-left-color:#f60;
+	left:50%;
+	top:0;
+	}
+.l02 i{
+	top:35%;
+	left:0;}
+.l02 i::before{
+	left:0;
+	top:0;
+	border-color:#f60;
+	}
+.l03{transform:rotate(-90deg);}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	

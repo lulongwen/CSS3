@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>perspective</title>
+    <style>
+    .area-container {
+        width: 200px;
+        height: 200px;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -100px;
+        position: absolute;
+        -webkit-perspective: 1000px;
+        -webkit-transform-style: preserve-3d;
+    }
+    
+    .area {
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, .1);
+        -webkit-transform-style: preserve-3d;
+    }
+    
+    .area > div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        font-size: 20px;
+        line-height: 10;
+        text-align: center;
+        opacity: .6;
+    }
+    
+    .area .top {
+        background: red;
+        -webkit-transform: rotateX(-90deg) translateZ(-100px);
+    }
+    
+    .area .bottom {
+        background: green;
+        -webkit-transform: rotateX(90deg) translateZ(-100px);
+    }
+    
+    .area .east {
+        background: blue;
+        -webkit-transform: rotateY(-90deg) translateZ(-100px);
+    }
+    
+    .area .west {
+        background: orange;
+        -webkit-transform: rotateY(90deg) translateZ(-100px);
+    }
+    
+    .area .north {
+        background: gray;
+        -webkit-transform: translateZ(-100px);
+    }
+    
+    .area .south {
+        background: gray;
+        -webkit-transform: translateZ(100px);
+    }
+    
+    .area_animation {
+        -webkit-animation: animation 2s linear infinite;
+    }
+    
+    @-webkit-keyframes animation {
+        0% {
+            -webkit-transform: translate3d(0px, 0px, 0px) rotateZ(0deg) rotateX(0deg) rotateX(360deg) rotateY(0deg) rotateY(360deg);
+            opacity: 1
+        }
+        100% {
+            -webkit-transform: translate3d(0px, 0px, 0px) rotateZ(0deg) rotateX(0deg) rotateX(0deg) rotateY(0deg) rotateY(0deg);
+            opacity: 1
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="area-container">
+        <div class="area area_animation">
+            <div class="top">top</div>
+            <div class="bottom">bottom</div>
+            <div class="east">east</div>
+            <div class="west">west</div>
+            <div class="north">north</div>
+            <div class="south">south</div>
+        </div>
+    </div>
+</body>
+
+</html>

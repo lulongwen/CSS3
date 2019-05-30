@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <title>input 属性选择器</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="generator" content="code">
+  <meta name="author" content="卢珑文">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <style>
+    body {
+      padding: 2rem 0 2rem 3rem;
+    }
+    input {
+      margin-bottom: 1rem;
+      padding: 8px 15px;
+      outline: none;
+      border: 1px solid #f00;
+    }
+    /**
+      $= 结尾
+      ^= 开头
+      |= 属性值开头
+      *= 所有
+      ~= 包含
+    */
+    input[type=text] { border-color: #00ff00 }
+    input[type$=text] { border-color: darkblue }
+    input[type^=text] { border-color: #1c2438 }
+    input[type*=text] { border-color: #19be6b }
+    input[type~=text] { border-color: blue }
+    input[type|=text] { border-color: yellowgreen }
+  </style>
+</head>
+<body>
+  <input type="checkbox" /> <br>
+  <input type="text" value="css-pear" /> <br>
+  <input type="text" value="css-apple" /> <br>
+  <input type="text" value="css-orange" /> <br>
+  <input type="text" value="css-lemon" /> <br>
+  <input type="text" value="css-melon" /> <br>
+  <input type="password" value="123"/> <br>
+  <input type="textarea" value="css-textarea"/>
+</body>
+</html>

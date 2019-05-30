@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片两边阴影</title>
+<style>
+	.shadow{
+		list-style-type: none;
+		margin: 50px auto;
+		padding: 0;
+		width:690px;
+		height: 600px;
+		overflow: hidden;
+	}
+	.shadow li{
+		width:300px;
+		height:176px;
+		margin:20px;
+		float: left;
+		position: relative;
+	}
+.shadow li::before,.shadow li::after{
+	content:'';
+	position: absolute;
+	width:90%;
+	height:80%;
+	bottom:9px;
+	z-index: -1;
+	box-shadow:0 8px 16px rgba(0,0,0,.7);
+}
+.shadow li::before{
+	left:12px;
+	transform:skew(-12deg) rotate(-4deg);
+}
+.shadow li::after{
+	z-index: -2px;
+	right:12px;
+	transform:skew(12deg) rotate(4deg);
+}
+	.shadow li img{width:100%;}
+</style>
+</head>
+<body>
+	<ul class="shadow">
+		<li><a href=""><img src="2.jpg" alt=""></a></li>
+		<li><a href=""><img src="2.jpg" alt=""></a></li>
+	</ul>
+</body>
+</html>

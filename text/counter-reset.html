@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>counter-reset</title>
+  <style>
+
+    /* counter-reset:subsection;}   //在遍历到h1时重置h2的计数器。*/
+    h1, h2 {counter-increment: subsection;}
+    h1:before, h2:before {
+      content:"计数器" counter(section) ". ";
+    }
+    p:before {
+      /*counter-increment:subsection;*/
+      content: counter(section) "." counter(subsection) " ";
+    }
+  </style>
+</head>
+<body>
+  <h1>counter-increment title-first</h1>
+  <p>设置某个选取器每次出现的计数器增量</p>
+  <p>设置某个选取器每次出现的计数器增量</p>
+  <p>设置某个选取器每次出现的计数器增量</p>
+
+  <h2>counter-increment title-second</h2>
+  <p>重置某个选择器出现次数的计数器的值。可以为任意值，默认为 0</p>
+  <p>重置某个选择器出现次数的计数器的值。可以为任意值，默认为 0</p>
+
+  <h2>counter-resettitle-third</h2>
+  <p>重置某个选择器出现次数的计数器的值。可以为任意值，默认为 0</p>
+  <p>重置某个选择器出现次数的计数器的值。可以为任意值，默认为 0</p>
+
+  <pre>
+    counter-increment：设置某个选取器每次出现的计数器增量。默认增量是 1
+
+    counter-reset：重置某个选择器出现次数的计数器的值。可以为任意值，默认为 0
+  </pre>
+</body>
+</html>

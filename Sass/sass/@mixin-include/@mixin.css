@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/*
+  @mixin 声明混合
+  @include 引用混合
+
+  @mixin opacity()      不写参数，可以直接调用
+  @mixin opacity($op)    调用时，必须传参
+  @mixin opacity($op:90) 调用时，如果传参就用传了的参数，没传就用默认的
+*/
+.list {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  opacity: 0.3;
+  filter: alpha(opacity=30); }
+
+/* ... 多值混合，类似 JS中的扩展运算符 
+   ... 表示参数不确定有多少个
+*/
+.item {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(213, 0, 0, 0.8); }
+
+.box {
+  border-style: dashed dashed solid dashed;
+  border-color: transparent transparent #90f transparent;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  overflow: hidden;
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+.warning {
+  color: #90f;
+  background-color: #09f; }
+  .warning a {
+    color: #7a00cc; }
+
+.default {
+  color: #f09;
+  background-color: #90f; }
+  .default a {
+    color: #cc007a; }
+
+.nav h2, .nav h3, .nav h4 {
+  font-size: 20px; }
+
+.nav .title > p {
+  font-size: 12px;
+  border: 1px solid #d88;
+    border-left: 0;
+    border-top: 10px; }

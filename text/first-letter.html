@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>CSS3 first-letter first-line</title>
+  <style>
+    body {
+      margin: 2rem 0 2rem 3rem;
+    }
+    p {
+      width: 400px;
+    }
+    /* Selectors for matching the first letter and line: */
+    p::first-letter {
+      background-color: #666;
+      color: #FFF;
+      font-size: 30px;
+    }
+
+    p::first-line {
+      font-size: 18px;
+      text-transform: uppercase;
+      font-style: italic;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS3 p::frist-letter & p::first-line</h1>
+  <pre>
+    ::first-letter 第一个字母
+
+    ::first-line 块级元素中，第一行，换行的不算
+  </pre>
+  <p>This is a regular paragraph of text, which has a number of awesome CSS3 styles applied.</p>
+
+</footer>
+</body>
+</html>

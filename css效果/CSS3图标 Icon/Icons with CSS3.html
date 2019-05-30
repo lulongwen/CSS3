@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Transformicons</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="style.css">
+
+<!--  <script src="modernizr-2.5.3.min.js"></script>  -->
+</head>
+<body>
+  <section role="main">
+   
+<h1>Navicon Transformicons</h1>
+<h2>Animated Navigation Icons with CSS3 Transforms</h2>
+<p>Click on the icons to see them transforming.</p>
+
+    <div class="buttons-container">
+        <button type="button" role="button" aria-label="Toggle Navigation" class="lines-button arrow arrow-left">
+  <span class="lines"></span>
+</button>
+
+<button type="button" role="button" aria-label="Toggle Navigation" class="lines-button arrow arrow-up close">
+  <span class="lines"></span>
+</button>
+
+<button type="button" role="button" aria-label="Toggle Navigation" class="lines-button minus">
+  <span class="lines"></span>
+</button> 
+
+        <button type="button" role="button" aria-label="Toggle Navigation" class="lines-button x">
+          <span class="lines"></span>
+        </button>
+
+      <button type="button" role="button" aria-label="Toggle Navigation" class="lines-button x2">
+  <span class="lines"></span>
+</button>
+
+<button type="button" role="button" aria-label="Toggle Navigation" class="grid-button rearrange close">
+  <span class="grid"></span>
+</button>
+
+<button type="button" role="button" aria-label="Toggle Navigation" class="grid-button collapse close">
+  <span class="grid"></span>
+</button> 
+    </div>
+  </section>
+
+  <script>
+    var anchor = document.querySelectorAll('button');
+    
+    [].forEach.call(anchor, function(anchor){
+      var open = false;
+      anchor.onclick = function(event){
+        event.preventDefault();
+        if(!open){
+          this.classList.add('close');
+          open = true;
+        }
+        else{
+          this.classList.remove('close');
+          open = false;
+        }
+      }
+    }); 
+  </script>
+
+
+</body></html>
